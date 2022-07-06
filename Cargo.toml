@@ -13,6 +13,18 @@ wasm-opt = false
 [lib]
 crate-type = ["cdylib", "lib"]
 
+
+[patch.crates-io]
+ark-std = {git = "https://github.com/arkworks-rs/utils"}
+ark-ec = {git = "https://github.com/arkworks-rs/algebra"}
+ark-ff = {git = "https://github.com/arkworks-rs/algebra"}
+ark-serialize = {git = "https://github.com/arkworks-rs/algebra"}
+ark-serialize-derive = {git = "https://github.com/arkworks-rs/algebra"}
+ark-poly = {git = "https://github.com/arkworks-rs/algebra"}
+ark-poly-commit = {git = "https://github.com/arkworks-rs/poly-commit"}
+ark-bls12-381 = {git = "https://github.com/arkworks-rs/curves"}
+ark-relations = {git = "https://github.com/arkworks-rs/snark"}
+
 [dependencies]
 # wasm dependencies
 wasm-bindgen = "0.2"
@@ -22,18 +34,10 @@ web-sys = { version = "0.3", features = ["console"]}
 rand_chacha = { version = "0.3.1", default-features = false }
 rand = { version = "0.7.3", features = ["wasm-bindgen"]}
 rand_xorshift = { version = "0.2" }
-
-#ark-r1cs-std = { version = "0.3.1", optional = true, default-features = false }
-#ark-relations = { version = "0.3.0", optional = true, default-features = false }
-#ark-ed-on-bls12-381 = { version = "0.3.0", optional = true, default-features = false, features = ["r1cs"] }
-#ark-crypto-primitives = { version = "0.3.0", features = [ "r1cs" ] }
-ark-ff = { path = "./arkworks/algebra/ff" }
-#ark-poly = "0.3.0"
-ark-bls12-381 = { path = "./arkworks/curves/bls12_381" }
-#ark-std = "0.3.0"
-#ark-ec = "0.3.0"
-#ark-poly-commit = { version = "0.3", default-features = false, optional=true }
-#ark-serialize = { version = "0.3.0", optional = true, default-features = false, features = ["derive"] }
+ark-ff = "0.3.0"
+ark-bls12-381 = "0.3.0"
+ark-std = "0.3.0"
+ark-ec = "0.3.0"
 
 [dev-dependencies]
 criterion = "0.3"

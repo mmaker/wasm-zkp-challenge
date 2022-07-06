@@ -16,9 +16,7 @@ impl PointVectorInput {
     pub fn new(size: usize) -> Self {
         let (point_vec, _) = msm::generate_msm_inputs(size);
 
-        Self {
-            point_vec,
-        }
+        Self { point_vec }
     }
 }
 
@@ -33,9 +31,7 @@ impl ScalarVectorInput {
     pub fn new(size: usize) -> Self {
         let (_, scalar_vec) = msm::generate_msm_inputs(size);
 
-        Self {
-            scalar_vec,
-        }
+        Self { scalar_vec }
     }
 }
 
